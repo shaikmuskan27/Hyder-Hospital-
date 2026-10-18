@@ -1158,8 +1158,14 @@
             <div class="flex flex-col gap-3 text-xs text-slate-700">
               <div class="flex items-start gap-3 p-3 rounded-xl bg-slate-50 border border-slate-100">
                 <span class="material-symbols-outlined text-sky-accent text-lg flex-shrink-0 mt-0.5">location_on</span>
-                <div>
-                  <strong class="text-primary block text-sm">Main Campus Address</strong>
+                <div class="flex-1">
+                  <div class="flex items-center justify-between">
+                    <strong class="text-primary block text-sm">Main Campus Address</strong>
+                    <a href="https://maps.app.goo.gl/9agpzndyerXEX54ZA" target="_blank" rel="noopener" class="text-[11px] text-sky-600 hover:text-sky-800 font-semibold inline-flex items-center gap-0.5">
+                      <span>Google Map</span>
+                      <span class="material-symbols-outlined text-xs">open_in_new</span>
+                    </a>
+                  </div>
                   Padmavathi Nagar, Near Railway Gate &amp; Bus Stand Road, Nandyala, Andhra Pradesh - 518501.
                 </div>
               </div>
@@ -1175,7 +1181,7 @@
             </div>
 
             <div class="flex flex-wrap gap-2.5">
-              <a href="https://maps.google.com/?q=Padmavati+Nagar+Rd+Nandyala+518501" target="_blank" rel="noopener" class="h-10 px-4 bg-primary text-white rounded-xl text-xs font-bold flex items-center gap-2 hover:bg-primary-navy active:scale-95 transition-all">
+              <a href="https://maps.app.goo.gl/9agpzndyerXEX54ZA" target="_blank" rel="noopener" class="h-10 px-4 bg-primary text-white rounded-xl text-xs font-bold flex items-center gap-2 hover:bg-primary-navy active:scale-95 transition-all shadow-sm">
                 <span class="material-symbols-outlined text-base">directions</span>
                 <span>Open in Google Maps</span>
               </a>
@@ -1186,25 +1192,29 @@
             </div>
           </div>
 
-          <!-- Map Simulation Preview -->
-          <div class="lg:w-1/2 rounded-2xl overflow-hidden border border-slate-200 relative min-h-[260px] bg-sky-50 flex items-center justify-center p-4">
-            <div class="absolute inset-0 bg-gradient-to-br from-sky-100 via-white to-emerald-50"></div>
-            <!-- Decorative Map Grid Lines -->
-            <div class="absolute inset-0 opacity-20 pointer-events-none" style="background-image: radial-gradient(#0284c7 1px, transparent 1px); background-size: 20px 20px;"></div>
-            
-            <div class="relative z-10 flex flex-col items-center text-center p-6 bg-white/90 backdrop-blur-md rounded-2xl border border-sky-200 shadow-sm max-w-sm">
-              <div class="w-14 h-14 rounded-full bg-clinical-green/10 text-clinical-green flex items-center justify-center mb-3 ring-4 ring-clinical-green/20">
-                <span class="material-symbols-outlined text-3xl">local_hospital</span>
+          <!-- Interactive Google Maps View -->
+          <div class="lg:w-1/2 rounded-2xl overflow-hidden border border-slate-200 relative min-h-[320px] bg-sky-50 shadow-sm flex flex-col">
+            <iframe 
+              src="https://maps.google.com/maps?q=Hyder+Hospitals,+Nandyal&amp;t=&amp;z=16&amp;ie=UTF8&amp;iwloc=&amp;output=embed" 
+              class="w-full h-full min-h-[320px] border-0" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade" 
+              title="Hyder Hospitals Google Map Location">
+            </iframe>
+            <!-- Floating Map Overlay Card -->
+            <div class="absolute bottom-3 inset-x-3 sm:inset-x-5 z-10 p-3 bg-white/95 backdrop-blur-md rounded-xl border border-sky-100 shadow-lg flex items-center justify-between gap-3">
+              <div class="flex items-center gap-2.5 min-w-0">
+                <div class="w-9 h-9 rounded-lg bg-red-50 text-red-600 flex items-center justify-center flex-shrink-0 ring-1 ring-red-200">
+                  <span class="material-symbols-outlined text-xl">location_on</span>
+                </div>
+                <div class="truncate">
+                  <span class="text-xs font-bold text-primary block truncate">Hyder Hospitals</span>
+                  <span class="text-[11px] text-slate-500 block truncate">Padmavathi Nagar, Nandyal</span>
+                </div>
               </div>
-              <h3 class="font-bold text-primary text-base">Hyder Hospital Campus</h3>
-              <p class="text-xs text-on-surface-variant mt-1">Padmavathi Nagar, Nandyal, AP 518501</p>
-              <div class="mt-3 flex items-center gap-2">
-                <span class="text-[11px] font-semibold text-clinical-green bg-clinical-green-soft px-2 py-0.5 rounded-full">Ambulance Bay Open</span>
-                <span class="text-[11px] font-semibold text-sky-accent bg-sky-soft px-2 py-0.5 rounded-full">Free Parking</span>
-              </div>
-              <a href="https://maps.google.com/?q=Padmavati+Nagar+Rd+Nandyala+518501" target="_blank" rel="noopener" class="mt-4 w-full h-9 bg-primary-container hover:bg-slate-900 text-white text-xs font-bold rounded-lg flex items-center justify-center gap-1.5 transition-all">
+              <a href="https://maps.app.goo.gl/9agpzndyerXEX54ZA" target="_blank" rel="noopener" class="h-8 px-3.5 bg-primary hover:bg-slate-900 active:scale-95 text-white text-xs font-bold rounded-lg flex items-center gap-1.5 transition-all flex-shrink-0 shadow-sm" title="Open in Google Maps App">
                 <span class="material-symbols-outlined text-sm">navigation</span>
-                <span>Get Turn-by-Turn GPS</span>
+                <span>Get Directions</span>
               </a>
             </div>
           </div>
@@ -1262,6 +1272,10 @@
             <button onclick="openEmergencyModal()" class="text-left hover:text-white transition-colors">Ambulance SOS (108)</button>
             <button onclick="openPharmacyInquiryModal()" class="text-left hover:text-white transition-colors">24/7 Pharmacy &amp; Lab</button>
             <a href="#location-section" class="hover:text-white transition-colors">Campus Directions</a>
+            <a href="https://maps.app.goo.gl/9agpzndyerXEX54ZA" target="_blank" rel="noopener" class="hover:text-white transition-colors flex items-center gap-1">
+              <span>Google Maps Directions</span>
+              <span class="material-symbols-outlined text-[11px]">open_in_new</span>
+            </a>
           </div>
         </div>
 
@@ -1381,12 +1395,16 @@
       <div class="flex flex-col sm:flex-row gap-2 pt-2 no-print">
         <button onclick="window.print()" class="flex-1 h-10 bg-primary-container hover:bg-slate-900 text-white text-xs font-bold rounded-xl flex items-center justify-center gap-1.5 transition-all">
           <span class="material-symbols-outlined text-base">print</span>
-          <span>Print / Save PDF</span>
+          <span>Print / PDF</span>
         </button>
         <button onclick="shareOnWhatsApp()" class="flex-1 h-10 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold rounded-xl flex items-center justify-center gap-1.5 transition-all">
           <span class="material-symbols-outlined text-base">share</span>
-          <span>Send to WhatsApp</span>
+          <span>WhatsApp</span>
         </button>
+        <a href="https://maps.app.goo.gl/9agpzndyerXEX54ZA" target="_blank" rel="noopener" class="flex-1 h-10 bg-sky-700 hover:bg-sky-800 text-white text-xs font-bold rounded-xl flex items-center justify-center gap-1.5 transition-all text-center">
+          <span class="material-symbols-outlined text-base">directions</span>
+          <span>Directions</span>
+        </a>
         <button onclick="closeModal('opdSlipModal')" class="h-10 px-4 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold rounded-xl transition-all">
           <span>Done</span>
         </button>
@@ -1428,6 +1446,10 @@
           <span class="material-symbols-outlined text-base text-red-400">fmd_good</span>
           <span>Dispatch Hyder Ambulance (Nandyal Region)</span>
         </button>
+        <a href="https://maps.app.goo.gl/9agpzndyerXEX54ZA" target="_blank" rel="noopener" class="h-11 bg-slate-800 hover:bg-slate-900 text-white rounded-xl text-xs font-bold flex items-center justify-center gap-2 transition-all">
+          <span class="material-symbols-outlined text-base text-sky-400">near_me</span>
+          <span>Hospital Directions on Google Maps</span>
+        </a>
       </div>
 
       <div class="p-3 bg-red-50 rounded-xl text-[11px] text-red-800 flex items-start gap-2">
@@ -1572,7 +1594,7 @@
           <button onclick="handleVoicePromptClick('Pharmacy &amp; Lab Timings', 'Our central diagnostic lab and ground-floor dispensing pharmacy at Hyder Hospital are open 24 hours day and night with rapid haematology and biochemistry tests.')" class="px-3.5 py-2 rounded-full bg-sky-50 hover:bg-sky-100 text-sky-800 border border-sky-200/80 font-medium whitespace-nowrap active:scale-95 transition-all">
             24/7 Pharmacy &amp; Lab
           </button>
-          <button onclick="handleVoicePromptClick('Campus Location &amp; Directions', 'Hyder Hospital is located at Padmavathi Nagar, Near Railway Gate &amp; Bus Stand Road, Nandyal, AP 518501 with free patient parking and wheelchair ramp access.')" class="px-3.5 py-2 rounded-full bg-sky-50 hover:bg-sky-100 text-sky-800 border border-sky-200/80 font-medium whitespace-nowrap active:scale-95 transition-all">
+          <button onclick="handleVoicePromptClick('Campus Location &amp; Directions', 'Hyder Hospital is located at Padmavathi Nagar, Near Railway Gate &amp; Bus Stand Road, Nandyal, AP 518501. Direct Google Maps link: https://maps.app.goo.gl/9agpzndyerXEX54ZA')" class="px-3.5 py-2 rounded-full bg-sky-50 hover:bg-sky-100 text-sky-800 border border-sky-200/80 font-medium whitespace-nowrap active:scale-95 transition-all">
             Campus Directions
           </button>
         </div>
@@ -2118,6 +2140,8 @@
         reply = "Dr. Shabnam (Senior OBGYN Specialist) has consultation slots available today from 10:00 AM - 1:00 PM and 5:00 PM - 8:00 PM.";
       } else if (lower.includes('dental') || lower.includes('teeth') || lower.includes('tooth') || lower.includes('canal')) {
         reply = "Our Dental Operatory provides complete oral care, root canals, braces, aligners, and dental trauma surgery.";
+      } else if (lower.includes('map') || lower.includes('location') || lower.includes('address') || lower.includes('direction') || lower.includes('reach') || lower.includes('where')) {
+        reply = "Hyder Hospital is located at Padmavathi Nagar, near Railway Gate & Bus Stand Road, Nandyal, AP 518501. View live directions on Google Maps: https://maps.app.goo.gl/9agpzndyerXEX54ZA";
       }
 
       handleVoicePromptClick(text, reply);
