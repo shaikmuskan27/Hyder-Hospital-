@@ -336,8 +336,9 @@
           <span class="text-xs font-bold">Dr. Shabnam</span>
           <span class="text-[11px] text-emerald-300 font-medium">Senior Specialist On Duty</span>
           <span class="text-[11px] text-slate-300 hidden sm:inline">• 4.9 ★ (1,200+ Patients)</span>
-          <button onclick="bookWithDoctor('Dr. Shabnam (OBGYN &amp; Maternity)')" class="text-xs font-bold text-sky-300 hover:text-white underline underline-offset-2 flex items-center gap-0.5 ml-1">
-            Book Slot <span class="material-symbols-outlined text-xs">arrow_forward</span>
+          <button type="button" id="heroDrShabnamBookBtn" onclick="bookWithDoctor('Dr. Shabnam (OBGYN &amp; Maternity)')" class="bg-clinical-green hover:bg-emerald-600 active:scale-95 text-white text-xs font-bold px-3 py-1 rounded-full flex items-center gap-1 shadow-sm transition-all cursor-pointer ml-1" title="Book appointment slot with Dr. Shabnam">
+            <span>Book Slot</span>
+            <span class="material-symbols-outlined text-xs">arrow_forward</span>
           </button>
         </div>
 
@@ -1722,27 +1723,48 @@
       const doctorSelect = document.getElementById('doctorSelect');
       const deptSelect = document.getElementById('deptSelect');
       
-      if (docName.includes('OBGYN')) {
-        deptSelect.value = 'Gynecology & Maternity';
-      } else if (docName.includes('Critical Care')) {
-        deptSelect.value = 'Critical Care / ICU';
-      } else if (docName.includes('Orthopaedics')) {
-        deptSelect.value = 'Orthopaedics';
-      } else if (docName.includes('General Medicine')) {
-        deptSelect.value = 'General Medicine';
+      let targetDept = 'Gynecology & Maternity';
+      if (docName.includes('OBGYN') || docName.includes('Shabnam')) {
+        targetDept = 'Gynecology & Maternity';
+      } else if (docName.includes('Critical Care') || docName.includes('Hyder')) {
+        targetDept = 'Critical Care / ICU';
+      } else if (docName.includes('Orthopaedics') || docName.includes('Reddy')) {
+        targetDept = 'Orthopaedics';
+      } else if (docName.includes('General Medicine') || docName.includes('Farooq')) {
+        targetDept = 'General Medicine';
       }
       
-      updateDoctorDropdown(deptSelect.value);
-      doctorSelect.value = docName;
+      if (deptSelect) {
+        deptSelect.value = targetDept;
+      }
+      
+      updateDoctorDropdown(targetDept);
+      
+      if (doctorSelect) {
+        let found = false;
+        for (let i = 0; i < doctorSelect.options.length; i++) {
+          if (doctorSelect.options[i].value === docName || doctorSelect.options[i].value.includes('Shabnam')) {
+            doctorSelect.selectedIndex = i;
+            found = true;
+            break;
+          }
+        }
+        if (!found) doctorSelect.value = docName;
+      }
 
       const section = document.getElementById('appointment-section');
       if (section) {
-        section.scrollIntoView({ behavior: 'smooth' });
+        section.scrollIntoView({ behavior: 'smooth', block: 'start' });
         setTimeout(() => {
-          document.getElementById('patientName').focus();
-        }, 500);
+          const patientNameInput = document.getElementById('patientName');
+          if (patientNameInput) {
+            patientNameInput.focus();
+            patientNameInput.classList.add('ring-2', 'ring-sky-400');
+            setTimeout(() => patientNameInput.classList.remove('ring-2', 'ring-sky-400'), 1500);
+          }
+        }, 350);
       }
-      showToast(`Selected Doctor: ${docName}`, 'info');
+      showToast(`Selected: ${docName}`, 'success');
     }
 
     function selectDateChip(btn, val) {
@@ -1994,6 +2016,11 @@
     // I. TOAST SYSTEM
     // --------------------------------------------------------
     let toastTimeout = null;
+    function hideToast() {
+      const toast = document.getElementById('toastNotification');
+      if (toast) toast.classList.add('hidden');
+    }
+
     function showToast(desc, type = 'info') {
       const toast = document.getElementById('toastNotification');
       const toastTitle = document.getElementById('toastTitle');
