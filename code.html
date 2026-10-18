@@ -227,16 +227,16 @@
     </div>
 
     <!-- Main Navigation Bar -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-4">
+    <div class="max-w-7xl mx-auto px-3 sm:px-6 h-16 flex items-center justify-between gap-2 sm:gap-4">
       <!-- Top-Left Logo & Title -->
-      <a href="#" class="flex items-center gap-3 min-w-0 group" title="Hyder Hospital - Home">
-        <img alt="Hyder Hospital Logo" class="h-11 w-auto object-contain flex-shrink-0 transition-transform group-hover:scale-105" src="logo.png"/>
+      <a href="#" class="flex items-center gap-2 sm:gap-3 min-w-0 group" title="Hyder Hospital - Home">
+        <img alt="Hyder Hospital Logo" class="h-10 sm:h-11 w-auto object-contain flex-shrink-0 transition-transform group-hover:scale-105" src="logo.png"/>
         <div class="flex flex-col min-w-0">
           <div class="flex items-center gap-1.5">
-            <span class="font-display font-bold text-lg text-primary tracking-tight leading-tight group-hover:text-primary-navy transition-colors truncate">Hyder Hospital</span>
-            <span class="text-clinical-green font-bold text-[10px] bg-clinical-green-soft px-1.5 py-0.5 rounded border border-emerald-200 flex-shrink-0">NABH</span>
+            <span class="font-display font-bold text-base sm:text-lg text-primary tracking-tight leading-tight group-hover:text-primary-navy transition-colors truncate">Hyder Hospital</span>
+            <span class="text-clinical-green font-bold text-[9px] sm:text-[10px] bg-clinical-green-soft px-1.5 py-0.5 rounded border border-emerald-200 flex-shrink-0">NABH</span>
           </div>
-          <span class="text-[11px] text-on-surface-variant truncate font-medium">Multi-Specialty &amp; Critical Care • Nandyal</span>
+          <span class="text-[10px] sm:text-[11px] text-on-surface-variant truncate font-medium">Multi-Specialty &amp; Critical Care • Nandyal</span>
         </div>
       </a>
 
@@ -251,17 +251,18 @@
       </nav>
 
       <!-- Right Action CTA Buttons -->
-      <div class="flex items-center gap-2 flex-shrink-0">
-        <button onclick="openTokenLookupModal()" class="hidden sm:flex h-9 px-3 bg-sky-50 hover:bg-sky-100 text-sky-accent border border-sky-200 rounded-lg text-xs font-bold items-center gap-1.5 transition-colors" title="Check your OPD token status">
+      <div class="flex items-center gap-1.5 sm:gap-2 flex-shrink-0">
+        <button onclick="openTokenLookupModal()" class="hidden md:flex h-9 px-3 bg-sky-50 hover:bg-sky-100 text-sky-accent border border-sky-200 rounded-lg text-xs font-bold items-center gap-1.5 transition-colors" title="Check your OPD token status">
           <span class="material-symbols-outlined text-base">receipt_long</span>
           <span>Find Token</span>
         </button>
-        <a href="#appointment-section" class="h-9 px-3.5 bg-clinical-green hover:bg-emerald-700 text-white rounded-lg text-xs font-bold flex items-center gap-1.5 shadow-sm hover:shadow-glow-emerald active:scale-95 transition-all">
+        <a href="#appointment-section" class="h-9 px-3 sm:px-3.5 bg-clinical-green hover:bg-emerald-700 text-white rounded-lg text-xs font-bold flex items-center gap-1 sm:gap-1.5 shadow-sm hover:shadow-glow-emerald active:scale-95 transition-all">
           <span class="material-symbols-outlined text-base">calendar_month</span>
-          <span>Book Consult</span>
+          <span class="hidden xs:inline">Book Consult</span>
+          <span class="xs:hidden">Book</span>
         </a>
-        <button onclick="openPortalModal()" class="w-9 h-9 rounded-full ring-2 ring-sky-light/80 hover:ring-sky-accent flex items-center justify-center bg-slate-100 text-slate-600 hover:text-primary transition-all overflow-hidden" title="Patient &amp; Doctor Quick Portal">
-          <span class="material-symbols-outlined text-xl">account_circle</span>
+        <button onclick="openPortalModal()" class="w-8 h-8 sm:w-9 sm:h-9 rounded-full ring-2 ring-sky-light/80 hover:ring-sky-accent flex items-center justify-center bg-slate-100 text-slate-600 hover:text-primary transition-all overflow-hidden" title="Patient &amp; Doctor Quick Portal">
+          <span class="material-symbols-outlined text-lg sm:text-xl">account_circle</span>
         </button>
       </div>
     </div>
@@ -288,83 +289,61 @@
           Your browser does not support HTML5 video.
         </video>
         <!-- Pure natural video background without blue color wrapping -->
+        <div class="absolute inset-0 pointer-events-none" style="background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.40) 0%, rgba(0, 0, 0, 0.15) 55%, transparent 85%);"></div>
       </div>
 
-      <!-- Hero Content with Frosted Glass Panel (Leaves full video 100% natural and bright) -->
-      <div class="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 py-10 md:py-14 w-full flex flex-col justify-center">
-        <div class="max-w-2xl flex flex-col gap-5 text-white bg-slate-950/55 backdrop-blur-md border border-white/15 rounded-3xl p-6 sm:p-8 shadow-2xl">
-          
-          <!-- Trust Badge Pill -->
-          <div class="inline-flex items-center gap-2 self-start bg-white/15 border border-white/25 text-emerald-300 px-3.5 py-1.5 rounded-full text-xs font-semibold tracking-wide shadow-sm">
-            <span class="relative flex h-2 w-2">
-              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-clinical-green-light opacity-75"></span>
-              <span class="relative inline-flex rounded-full h-2 w-2 bg-clinical-green-light"></span>
-            </span>
-            <span class="material-symbols-outlined text-sm text-clinical-green-light">verified_user</span>
-            <span>NANDYAL'S LEADING TERTIARY HEALTHCARE • 24/7 OPEN</span>
-          </div>
-
-          <!-- Hero Headline (Exact text requested by user) -->
-          <h1 class="font-display text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight leading-[1.18] text-white">
-            Advanced Multi-Specialty Care, <span class="bg-gradient-to-r from-teal-200 via-emerald-300 to-teal-100 bg-clip-text text-transparent">Compassionate Healing.</span>
-          </h1>
-
-          <!-- Hero Subtitle (Exact text requested by user) -->
-          <p class="font-sans text-sm sm:text-base md:text-lg text-slate-100/90 leading-relaxed max-w-xl font-normal">
-            Trusted multi-specialty hospital in Nandyal offering 24/7 emergency services, advanced critical care units (ICU, NICU, PICU), and specialized healthcare under one roof.
-          </p>
-
-          <!-- Quick Action Buttons -->
-          <div class="flex flex-col sm:flex-row gap-3 pt-1">
-            <a href="#appointment-section" class="h-11 px-5 bg-clinical-green hover:bg-emerald-600 text-white rounded-xl text-sm font-bold flex items-center justify-center gap-2 shadow-lg shadow-emerald-900/30 hover:shadow-glow-emerald active:scale-95 transition-all">
-              <span class="material-symbols-outlined text-lg">calendar_today</span>
-              <span>Book Consultation</span>
-            </a>
-            <button onclick="openEmergencyModal()" class="h-11 px-5 bg-white/15 hover:bg-white/25 text-white border border-white/30 rounded-xl text-sm font-bold flex items-center justify-center gap-2 shadow-md active:scale-95 transition-all">
-              <span class="material-symbols-outlined text-lg text-rose-300">phone_in_talk</span>
-              <span>24/7 Helpline</span>
-            </button>
-            <a href="#departments-section" class="h-11 px-4 bg-white/10 hover:bg-white/20 border border-white/20 text-white rounded-xl text-sm font-semibold flex items-center justify-center gap-1.5 transition-colors">
-              <span>Specialties</span>
-              <span class="material-symbols-outlined text-base">arrow_forward</span>
-            </a>
-          </div>
-
-          <!-- Doctor Feature Card on Glass -->
-          <div class="mt-4 bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 max-w-xl shadow-glass">
-            <div class="flex items-center gap-3.5">
-              <div class="relative w-14 h-14 rounded-xl overflow-hidden bg-sky-900 ring-2 ring-sky-300/40 flex-shrink-0">
-                <img alt="Dr. Shabnam - Senior Specialist" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQo3rkv53OEIgbpUCC72YH3VmAHJkt5O_8T-ulXf4VVFo1VRqVRXKruBaOonky_Kld6B-bR-Z2YlyU57Iqeu-hsP557XMeo7E4hgdwcnS0fB2o9KC8ag-_JSmhiMMPQIWGcZlEPs6VCa7IX3468Dp1ReC1xbpe4LoDJCG_ZKhIVk8Nm7YWRxY1wTBGQ1GsHL1G4blGEKQrJ9t-fxWIG3j0CeDpUP96qx76vLGRVmzGxNRJjYQOTbAiDw"/>
-                <span class="absolute bottom-1 right-1 w-3 h-3 bg-clinical-green rounded-full border-2 border-white" title="On Duty"></span>
-              </div>
-              <div class="flex flex-col">
-                <div class="flex items-center gap-1.5 flex-wrap">
-                  <span class="font-bold text-white text-sm">Dr. Shabnam</span>
-                  <span class="text-[10px] font-bold bg-clinical-green/80 text-white px-2 py-0.5 rounded-full">Senior Specialist</span>
-                </div>
-                <span class="text-xs text-sky-200">OBGYN &amp; Advanced Maternal-Fetal Care</span>
-                <span class="text-[11px] text-slate-300 flex items-center gap-1 mt-0.5">
-                  <span class="material-symbols-outlined text-xs text-amber-300">star</span> <strong>4.9 / 5.0</strong> • 1,200+ Nandyal Patients
-                </span>
-              </div>
-            </div>
-            <button onclick="bookWithDoctor('Dr. Shabnam (OBGYN &amp; Maternity)')" class="w-full sm:w-auto h-9 px-4 bg-sky-accent hover:bg-sky-500 text-white text-xs font-bold rounded-lg flex items-center justify-center gap-1 shadow-sm active:scale-95 transition-all">
-              <span class="material-symbols-outlined text-sm">event_available</span>
-              <span>Book Slot</span>
-            </button>
-          </div>
-
+      <!-- Hero Content Centered Transparently Directly Over Video -->
+      <div class="relative z-20 max-w-5xl mx-auto px-4 sm:px-6 py-16 sm:py-24 md:py-28 w-full flex flex-col items-center justify-center text-center">
+        
+        <!-- Trust Badge Pill -->
+        <div class="inline-flex items-center gap-2 bg-black/50 backdrop-blur-md border border-white/25 text-emerald-300 px-3.5 sm:px-4 py-1.5 rounded-full text-[11px] sm:text-xs font-semibold tracking-wide shadow-md mx-auto mb-3">
+          <span class="relative flex h-2 w-2">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-clinical-green-light opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-clinical-green-light"></span>
+          </span>
+          <span class="material-symbols-outlined text-sm text-clinical-green-light">verified_user</span>
+          <span>NANDYAL'S LEADING TERTIARY HEALTHCARE • 24/7 OPEN</span>
         </div>
-      </div>
 
-      <!-- Video Control Buttons (Bottom Right of Hero) -->
-      <div class="absolute bottom-4 right-4 z-20 flex items-center gap-2">
-        <button id="videoToggleBtn" onclick="toggleHeroVideo()" class="bg-black/40 hover:bg-black/60 text-white/90 hover:text-white p-2 rounded-full backdrop-blur-md border border-white/20 transition-all text-xs flex items-center gap-1" title="Pause / Play Video">
-          <span class="material-symbols-outlined text-sm" id="videoToggleIcon">pause</span>
-        </button>
-        <button id="videoMuteBtn" onclick="toggleHeroMute()" class="bg-black/40 hover:bg-black/60 text-white/90 hover:text-white p-2 rounded-full backdrop-blur-md border border-white/20 transition-all text-xs flex items-center gap-1" title="Mute / Unmute Video">
-          <span class="material-symbols-outlined text-sm" id="videoMuteIcon">volume_off</span>
-        </button>
+        <!-- Hero Headline (Exact text requested by user, Centered & Transparent) -->
+        <h1 class="font-display text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.18] text-white max-w-4xl mx-auto" style="text-shadow: 0 3px 14px rgba(0,0,0,0.9), 0 1px 3px rgba(0,0,0,0.95);">
+          Advanced Multi-Specialty Care, <span class="text-teal-300">Compassionate Healing.</span>
+        </h1>
+
+        <!-- Hero Subtitle (Exact text requested by user, Centered & Transparent) -->
+        <p class="font-sans text-xs sm:text-base md:text-lg text-white/95 leading-relaxed max-w-2xl mx-auto mt-4 font-normal px-2" style="text-shadow: 0 2px 10px rgba(0,0,0,0.9), 0 1px 2px rgba(0,0,0,0.95);">
+          Trusted multi-specialty hospital in Nandyal offering 24/7 emergency services, advanced critical care units (ICU, NICU, PICU), and specialized healthcare under one roof.
+        </p>
+
+        <!-- Quick Action Buttons (Centered & Fully Responsive) -->
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-2.5 sm:gap-3.5 pt-6 w-full max-w-xs sm:max-w-none mx-auto">
+          <a href="#appointment-section" class="w-full sm:w-auto h-11 sm:h-12 px-6 bg-clinical-green hover:bg-emerald-600 text-white rounded-xl text-xs sm:text-sm font-bold flex items-center justify-center gap-2 shadow-xl shadow-black/40 hover:scale-105 active:scale-95 transition-all">
+            <span class="material-symbols-outlined text-lg sm:text-xl">calendar_today</span>
+            <span>Book Consultation</span>
+          </a>
+          <button onclick="openEmergencyModal()" class="w-full sm:w-auto h-11 sm:h-12 px-5 bg-rose-600 hover:bg-rose-700 text-white rounded-xl text-xs sm:text-sm font-bold flex items-center justify-center gap-2 shadow-xl shadow-black/40 hover:scale-105 active:scale-95 transition-all">
+            <span class="material-symbols-outlined text-lg sm:text-xl">phone_in_talk</span>
+            <span>24/7 Helpline</span>
+          </button>
+          <a href="#departments-section" class="w-full sm:w-auto h-11 sm:h-12 px-5 bg-black/45 hover:bg-black/65 backdrop-blur-md border border-white/30 text-white rounded-xl text-xs sm:text-sm font-semibold flex items-center justify-center gap-1.5 transition-all hover:scale-105">
+            <span>Specialties</span>
+            <span class="material-symbols-outlined text-base">arrow_forward</span>
+          </a>
+        </div>
+
+        <!-- Doctor On-Duty Pill (Centered & Transparent) -->
+        <div class="mt-5 inline-flex flex-wrap items-center justify-center gap-2.5 bg-black/50 backdrop-blur-md border border-white/20 rounded-full px-4 py-1.5 sm:py-2 text-white shadow-lg mx-auto">
+          <div class="relative w-7 h-7 rounded-full overflow-hidden bg-sky-900 ring-2 ring-emerald-400 flex-shrink-0">
+            <img alt="Dr. Shabnam" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQo3rkv53OEIgbpUCC72YH3VmAHJkt5O_8T-ulXf4VVFo1VRqVRXKruBaOonky_Kld6B-bR-Z2YlyU57Iqeu-hsP557XMeo7E4hgdwcnS0fB2o9KC8ag-_JSmhiMMPQIWGcZlEPs6VCa7IX3468Dp1ReC1xbpe4LoDJCG_ZKhIVk8Nm7YWRxY1wTBGQ1GsHL1G4blGEKQrJ9t-fxWIG3j0CeDpUP96qx76vLGRVmzGxNRJjYQOTbAiDw"/>
+          </div>
+          <span class="text-xs font-bold">Dr. Shabnam</span>
+          <span class="text-[11px] text-emerald-300 font-medium">Senior Specialist On Duty</span>
+          <span class="text-[11px] text-slate-300 hidden sm:inline">• 4.9 ★ (1,200+ Patients)</span>
+          <button onclick="bookWithDoctor('Dr. Shabnam (OBGYN &amp; Maternity)')" class="text-xs font-bold text-sky-300 hover:text-white underline underline-offset-2 flex items-center gap-0.5 ml-1">
+            Book Slot <span class="material-symbols-outlined text-xs">arrow_forward</span>
+          </button>
+        </div>
+
       </div>
     </section>
 
